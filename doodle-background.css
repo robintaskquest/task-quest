@@ -1,0 +1,66 @@
+/* Estilos para planos de fundo personalizados */
+
+/* Plano de fundo padrão com doodles */
+body.bg-doodle::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/doodle_pattern.jpeg');
+    background-size: 300px;
+    background-repeat: repeat;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+/* Planos de fundo com imagens */
+body.bg-image::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+/* Correção para "nenhum plano de fundo" - não usa pseudo-elemento ::before */
+body:not(.bg-doodle):not(.bg-image)::before {
+    content: none;
+    background-image: none;
+}
+
+/* Imagens específicas */
+body.bg-mountains-night::before {
+    background-image: url('../img/backgrounds/c3uhsgo1vx541.jpg');
+}
+
+body.bg-purple-gradient::before {
+    background-image: url('../img/backgrounds/1276993.jpg');
+}
+
+body.bg-neon-doodle::before {
+    background-image: url('../img/backgrounds/wp14199750.webp');
+}
+
+body.bg-cabin::before {
+    background-image: url('../img/backgrounds/cozy-cabin-in-the-woods-desktop-wallpaper-preview.jpg');
+}
+
+body.bg-field::before {
+    background-image: url('../img/backgrounds/wallpaper2you_376223.jpg');
+}
+
+body.bg-pink-mountains::before {
+    background-image: url('../img/backgrounds/9f7a0042715479838c35364624063f02.jpg');
+}
+
+body.bg-sunset-valley::before {
+    background-image: url('../img/backgrounds/sunset-mountain-valley-landscape-desktop-wallpaper-preview.jpg');
+}
