@@ -1,0 +1,227 @@
+/* Estilos para autenticação e perfil de usuário */
+.auth-container {
+    background-color: var(--card-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.user-email {
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
+
+.auth-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-status {
+    font-size: 0.8rem;
+    color: var(--light-text);
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--border-color);
+}
+
+.login-status.logged-in {
+    color: white;
+    background-color: var(--success-color);
+}
+
+.auth-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.auth-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.auth-button.google-login {
+    background-color: #4285F4;
+}
+
+.auth-button.google-login:hover {
+    background-color: #357ae8;
+}
+
+.auth-button.logout {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.auth-button.logout:hover {
+    background-color: #d0d0d0;
+}
+
+.auth-button.sync {
+    background-color: var(--accent-color);
+}
+
+.auth-button.sync:hover {
+    background-color: #e68a00;
+}
+
+/* Integração com Google Calendar */
+.calendar-integration {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar-integration-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.calendar-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.calendar-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.calendar-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-color);
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.calendar-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .calendar-slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .calendar-slider:before {
+    transform: translateX(26px);
+}
+
+input:disabled + .calendar-slider {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Notificações */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification.success {
+    background-color: var(--success-color);
+}
+
+.notification.error {
+    background-color: var(--danger-color);
+}
+
+.notification.warning {
+    background-color: var(--warning-color);
+}
+
+.notification.info {
+    background-color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .auth-actions {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .calendar-integration {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
