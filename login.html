@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robin Task Quest - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/login-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-header">
+            <div class="app-logo">
+                <img src="img/logo.png" alt="Robin Task Quest Logo" id="app-logo">
+            </div>
+            <h1 class="app-title">Robin Task Quest</h1>
+            <p class="app-description">Sua lista de tarefas gamificada</p>
+        </div>
+        
+        <div class="login-card">
+            <div class="login-content">
+                <h2>Bem-vindo!</h2>
+                <p>Faça login para acessar suas tarefas, acompanhar seu progresso e sincronizar seus dados.</p>
+                
+                <div class="login-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>Organize suas tarefas por categorias</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-level-up-alt"></i>
+                        <span>Ganhe XP e suba de nível ao completar tarefas</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Integração com Google Agenda</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Pomodoro integrado para maior produtividade</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-music"></i>
+                        <span>Playlists para manter o foco</span>
+                    </div>
+                </div>
+                
+                <div class="login-actions">
+                    <button id="google-login-button" class="auth-button google-login">
+                        <i class="fab fa-google"></i> Entrar com Google
+                    </button>
+                    <p class="login-note">Ao fazer login, você concorda com nossos <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a>.</p>
+                </div>
+            </div>
+            
+            <div class="login-image">
+                <img src="img/login-illustration.png" alt="Ilustração de tarefas" id="login-illustration">
+            </div>
+        </div>
+        
+        <div class="login-footer">
+            <p>&copy; 2025 Robin Task Quest. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <!-- Script para autenticação -->
+    <script src="js/login.js"></script>
+</body>
+</html>
